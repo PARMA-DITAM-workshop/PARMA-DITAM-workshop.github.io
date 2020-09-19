@@ -41,6 +41,10 @@ TEMPLATE_FILE_PROGRAM=`pwd`/_program.html
 TMP_FILE_PROGRAM=`pwd`/program_tmp.html
 FINAL_FILE_PROGRAM=`pwd`/../program.html
 
+TEMPLATE_FILE_GUIDELINES=`pwd`/_submission.html
+TMP_FILE_GUIDELINES=`pwd`/submission_tmp.html
+FINAL_FILE_GUIDELINES=`pwd`/../Submission_Guidelines.html
+
 # placeholders in the template
 ESCAPE_PREFIX=__
 ESCAPE_SUFFIX=__
@@ -118,8 +122,9 @@ X_CAMERA_YEAR_DATA=`cat ${X_CAMERA_DEADLINE_YEAR_FILENAME}`
 # start processing
 cp ${TEMPLATE_FILE_INDEX} ${TMP_FILE_INDEX}
 cp ${TEMPLATE_FILE_PROGRAM} ${TMP_FILE_PROGRAM}
+cp ${TEMPLATE_FILE_GUIDELINES} ${TMP_FILE_GUIDELINES}
 
-for WIP_FILE in "${TMP_FILE_PROGRAM}" "${TMP_FILE_INDEX}"
+for WIP_FILE in "${TMP_FILE_PROGRAM}" "${TMP_FILE_INDEX}" "${TMP_FILE_GUIDELINES}"
 do
 	# workshop data
 	sed -i "s/${WEEKDAY_PLACEHOLDER}/${WEEKDAY_DATA}/g" ${WIP_FILE}
@@ -158,3 +163,4 @@ done
 
 mv ${TMP_FILE_INDEX} ${FINAL_FILE_INDEX}
 mv ${TMP_FILE_PROGRAM} ${FINAL_FILE_PROGRAM}
+mv ${TMP_FILE_GUIDELINES} ${FINAL_FILE_GUIDELINES}
