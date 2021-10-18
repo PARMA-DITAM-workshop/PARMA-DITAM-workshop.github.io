@@ -1,15 +1,27 @@
 ##
 ## WORKSHOP INFORMATION
 ##
-WEEKDAY_DATA=Thursday
-DAY_DATA=19
-MONTH_DATA=01
-YEAR_DATA=2022
-ROOM_DATA=TBA
-LOCATION_DATA="Budapest, HU"
-PARMA_DATA=13
-DITAM_DATA=11
-SUBMISSION_LINK_DATA='https://easychair.org/conferences/?conf=parmaditam2022'
+
+WEEKDAY=Thursday
+DAY=19
+MONTH=01
+YEAR=2022
+
+ROOM=TBA
+LOCATION="Budapest, HU"
+HIPEAC_LINK='https://www.hipeac.net/2022/budapest/#/'
+
+PARMA=13
+DITAM=11
+
+SUBMISSION_LINK='https://easychair.org/conferences/?conf=parmaditam2022'
+
+## comment items that should not appear
+INDEX_ITEM_CFP='<li>Call For Papers <b>TBA</b></li>'
+#INDEX_ITEM_SUBMISSION='<li><a href="'"$SUBMISSION_LINK_DATA"'">Paper Submission</a></li>'
+INDEX_ITEM_SUBMISSION='<li>Paper Submission <b>TBA</b></li>'
+#INDEX_ITEM_PROGRAM='<li><a href="./program.html">Workshop Program</a></li>'
+#INDEX_ITEM_PROGRAM_PDF='<li><a href="./Program.pdf">Final Program PDF</a></li>'
 
 
 ##
