@@ -30,32 +30,69 @@ PARMA_PLACEHOLDER=${ESCAPE_PREFIX}PARMA${ESCAPE_SUFFIX}
 DITAM_PLACEHOLDER=${ESCAPE_PREFIX}DITAM${ESCAPE_SUFFIX}
 SUBMISSION_LINK_PLACEHOLDER=${ESCAPE_PREFIX}SUBMISSION_LINK${ESCAPE_SUFFIX}
 
-SUBMISSION_DAY_PLACEHOLDER=${ESCAPE_PREFIX}SUBMISSION_DAY${ESCAPE_SUFFIX}
-SUBMISSION_MONTH_PLACEHOLDER=${ESCAPE_PREFIX}SUBMISSION_MONTH${ESCAPE_SUFFIX}
-SUBMISSION_YEAR_PLACEHOLDER=${ESCAPE_PREFIX}SUBMISSION_YEAR${ESCAPE_SUFFIX}
-
-ACCEPTANCE_DAY_PLACEHOLDER=${ESCAPE_PREFIX}ACCEPTANCE_DAY${ESCAPE_SUFFIX}
-ACCEPTANCE_MONTH_PLACEHOLDER=${ESCAPE_PREFIX}ACCEPTANCE_MONTH${ESCAPE_SUFFIX}
-ACCEPTANCE_YEAR_PLACEHOLDER=${ESCAPE_PREFIX}ACCEPTANCE_YEAR${ESCAPE_SUFFIX}
-
-CAMERA_DAY_PLACEHOLDER=${ESCAPE_PREFIX}CAMERA_DAY${ESCAPE_SUFFIX}
-CAMERA_MONTH_PLACEHOLDER=${ESCAPE_PREFIX}CAMERA_MONTH${ESCAPE_SUFFIX}
-CAMERA_YEAR_PLACEHOLDER=${ESCAPE_PREFIX}CAMERA_YEAR${ESCAPE_SUFFIX}
-
-X_SUBMISSION_DAY_PLACEHOLDER=${ESCAPE_PREFIX}X_SUBMISSION_DAY${ESCAPE_SUFFIX}
-X_SUBMISSION_MONTH_PLACEHOLDER=${ESCAPE_PREFIX}X_SUBMISSION_MONTH${ESCAPE_SUFFIX}
-X_SUBMISSION_YEAR_PLACEHOLDER=${ESCAPE_PREFIX}X_SUBMISSION_YEAR${ESCAPE_SUFFIX}
-
-X_ACCEPTANCE_DAY_PLACEHOLDER=${ESCAPE_PREFIX}X_ACCEPTANCE_DAY${ESCAPE_SUFFIX}
-X_ACCEPTANCE_MONTH_PLACEHOLDER=${ESCAPE_PREFIX}X_ACCEPTANCE_MONTH${ESCAPE_SUFFIX}
-X_ACCEPTANCE_YEAR_PLACEHOLDER=${ESCAPE_PREFIX}X_ACCEPTANCE_YEAR${ESCAPE_SUFFIX}
-
-X_CAMERA_DAY_PLACEHOLDER=${ESCAPE_PREFIX}X_CAMERA_DAY${ESCAPE_SUFFIX}
-X_CAMERA_MONTH_PLACEHOLDER=${ESCAPE_PREFIX}X_CAMERA_MONTH${ESCAPE_SUFFIX}
-X_CAMERA_YEAR_PLACEHOLDER=${ESCAPE_PREFIX}X_CAMERA_YEAR${ESCAPE_SUFFIX}
+THE_SUBMISSION_CALENDAR_PLACEHOLDER=${ESCAPE_PREFIX}THE_SUBMISSION_CALENDAR${ESCAPE_SUFFIX}
+THE_REAL_CAMERA_DATE_PLACEHOLDER=${ESCAPE_PREFIX}THE_REAL_CAMERA_DATE${ESCAPE_SUFFIX}
 
 # read config
 source ../.data/config.sh
+
+# construct submission calendar
+make_items()
+{
+  # $1: list of dates
+  # $2: non-extended prefix
+  # $3: non-extended suffix
+  # $4: extended prefix
+  # $5: extended suffix
+  cur=
+  for d in $1; do
+    if [[ ! ( -z "$cur" ) ]]; then
+      printf '<li><strike>%s</strike></li>' "$cur"
+      cur="$4""$d""$5"
+    else
+      cur="$2""$d""$3"
+    fi
+  done
+  printf '<li>%s</li>' "$cur"
+}
+
+make_real_date()
+{
+  # $1: list of dates
+  # $2: non-extended prefix
+  # $3: non-extended suffix
+  # $4: extended prefix
+  # $5: extended suffix
+  cur=
+  for d in $1; do
+    if [[ ! ( -z "$cur" ) ]]; then
+      printf '<strike>%s</strike> ' "$cur"
+      cur="$4""$d""$5"
+    else
+      cur="$2""$d""$3"
+    fi
+  done
+  printf '%s' "$cur"
+}
+
+subm_date_html=$(make_items \
+  "${SUBMISSION_DATES}" \
+  '' ' - 11:59 PM (UTC): Paper Submission Deadline' \
+  '<font color="#FF0000"><b>' '- 11:59 PM (UTC): NEW EXTENDED Paper Submission Deadline</b></font>')
+accp_date_html=$(make_items \
+  "${ACCEPTANCE_DATES}" \
+  '' ': Acceptance Notification' \
+  '' '<b>(EXTENDED deadline)</b> Acceptance Notification')
+cdry_date_html=$(make_items \
+  "${CAMERA_DATES}" \
+  '' ': <a href= "./Submission_Guidelines.html">Camera ready</a> version of accepted papers for workshop proceedings' \
+  '' ': <b>(EXTENDED deadline)</b> <a href= "./Submission_Guidelines.html">Camera ready</a> version of accepted papers for workshop proceedings')
+THE_SUBMISSION_CALENDAR="$subm_date_html$accp_date_html$cdry_date_html"
+
+THE_REAL_CAMERA_DATE=$(make_real_date \
+  "${CAMERA_DATES}" \
+  '<b>' '</b>' \
+  '<b>' '</b>')
 
 # start processing
 cat "$TEMPLATE_FILE_GLOB_HEAD" "$TEMPLATE_FILE_INDEX" "$TEMPLATE_FILE_GLOB_FOOT" > "$TMP_FILE_INDEX"
@@ -65,41 +102,21 @@ cat "$TEMPLATE_FILE_GLOB_HEAD" "${TEMPLATE_FILE_GUIDELINES}" "$TEMPLATE_FILE_GLO
 for WIP_FILE in "${TMP_FILE_PROGRAM}" "${TMP_FILE_INDEX}" "${TMP_FILE_GUIDELINES}"
 do
 	# workshop data
-	sed -i '' "s/${WEEKDAY_PLACEHOLDER}/${WEEKDAY_DATA}/g" ${WIP_FILE}
-	sed -i '' "s/${DAY_PLACEHOLDER}/${DAY_DATA}/g" ${WIP_FILE}
-	sed -i '' "s/${MONTH_PLACEHOLDER}/${MONTH_DATA}/g" ${WIP_FILE}
-	sed -i '' "s/${YEAR_PLACEHOLDER}/${YEAR_DATA}/g" ${WIP_FILE}
-	sed -i '' "s/${ROOM_PLACEHOLDER}/${ROOM_DATA}/g" ${WIP_FILE}
-	sed -i '' "s/${LOCATION_PLACEHOLDER}/${LOCATION_DATA}/g" ${WIP_FILE}
+	sed -i '' "s%${WEEKDAY_PLACEHOLDER}%${WEEKDAY_DATA}%g" ${WIP_FILE}
+	sed -i '' "s%${DAY_PLACEHOLDER}%${DAY_DATA}%g" ${WIP_FILE}
+	sed -i '' "s%${MONTH_PLACEHOLDER}%${MONTH_DATA}%g" ${WIP_FILE}
+	sed -i '' "s%${YEAR_PLACEHOLDER}%${YEAR_DATA}%g" ${WIP_FILE}
+	sed -i '' "s%${ROOM_PLACEHOLDER}%${ROOM_DATA}%g" ${WIP_FILE}
+	sed -i '' "s%${LOCATION_PLACEHOLDER}%${LOCATION_DATA}%g" ${WIP_FILE}
 	sed -i '' "s|${SUBMISSION_LINK_PLACEHOLDER}|${SUBMISSION_LINK_DATA}|" ${WIP_FILE}
 	# edition numbers
-	sed -i '' "s/${PARMA_PLACEHOLDER}/${PARMA_DATA}/g" ${WIP_FILE}
-	sed -i '' "s/${DITAM_PLACEHOLDER}/${DITAM_DATA}/g" ${WIP_FILE}
-
-	# deadlines
-	sed -i '' "s/${SUBMISSION_DAY_PLACEHOLDER}/${SUBMISSION_DAY_DATA}/g" ${WIP_FILE}
-	sed -i '' "s/${SUBMISSION_MONTH_PLACEHOLDER}/${SUBMISSION_MONTH_DATA}/g" ${WIP_FILE}
-	sed -i '' "s/${SUBMISSION_YEAR_PLACEHOLDER}/${SUBMISSION_YEAR_DATA}/g" ${WIP_FILE}
-	sed -i '' "s/${ACCEPTANCE_DAY_PLACEHOLDER}/${ACCEPTANCE_DAY_DATA}/g" ${WIP_FILE}
-	sed -i '' "s/${ACCEPTANCE_MONTH_PLACEHOLDER}/${ACCEPTANCE_MONTH_DATA}/g" ${WIP_FILE}
-	sed -i '' "s/${ACCEPTANCE_YEAR_PLACEHOLDER}/${ACCEPTANCE_YEAR_DATA}/g" ${WIP_FILE}
-	sed -i '' "s/${CAMERA_DAY_PLACEHOLDER}/${CAMERA_DAY_DATA}/g" ${WIP_FILE}
-	sed -i '' "s/${CAMERA_MONTH_PLACEHOLDER}/${CAMERA_MONTH_DATA}/g" ${WIP_FILE}
-	sed -i '' "s/${CAMERA_YEAR_PLACEHOLDER}/${CAMERA_YEAR_DATA}/g" ${WIP_FILE}
-
-	# extended deadlines
-	sed -i '' "s/${X_SUBMISSION_DAY_PLACEHOLDER}/${X_SUBMISSION_DAY_DATA}/g" ${WIP_FILE}
-	sed -i '' "s/${X_SUBMISSION_MONTH_PLACEHOLDER}/${X_SUBMISSION_MONTH_DATA}/g" ${WIP_FILE}
-	sed -i '' "s/${X_SUBMISSION_YEAR_PLACEHOLDER}/${X_SUBMISSION_YEAR_DATA}/g" ${WIP_FILE}
-	sed -i '' "s/${X_ACCEPTANCE_DAY_PLACEHOLDER}/${X_ACCEPTANCE_DAY_DATA}/g" ${WIP_FILE}
-	sed -i '' "s/${X_ACCEPTANCE_MONTH_PLACEHOLDER}/${X_ACCEPTANCE_MONTH_DATA}/g" ${WIP_FILE}
-	sed -i '' "s/${X_ACCEPTANCE_YEAR_PLACEHOLDER}/${X_ACCEPTANCE_YEAR_DATA}/g" ${WIP_FILE}
-	sed -i '' "s/${X_CAMERA_DAY_PLACEHOLDER}/${X_CAMERA_DAY_DATA}/g" ${WIP_FILE}
-	sed -i '' "s/${X_CAMERA_MONTH_PLACEHOLDER}/${X_CAMERA_MONTH_DATA}/g" ${WIP_FILE}
-	sed -i '' "s/${X_CAMERA_YEAR_PLACEHOLDER}/${X_CAMERA_YEAR_DATA}/g" ${WIP_FILE}
+	sed -i '' "s%${PARMA_PLACEHOLDER}%${PARMA_DATA}%g" ${WIP_FILE}
+	sed -i '' "s%${DITAM_PLACEHOLDER}%${DITAM_DATA}%g" ${WIP_FILE}
+  # submission calendar et al
+	sed -i '' "s%${THE_SUBMISSION_CALENDAR_PLACEHOLDER}%${THE_SUBMISSION_CALENDAR}%g" ${WIP_FILE}
+	sed -i '' "s%${THE_REAL_CAMERA_DATE_PLACEHOLDER}%${THE_REAL_CAMERA_DATE}%g" ${WIP_FILE}
 done
 
-rm -rf *.bak
 mv ${TMP_FILE_INDEX} ${FINAL_FILE_INDEX}
 mv ${TMP_FILE_PROGRAM} ${FINAL_FILE_PROGRAM}
 mv ${TMP_FILE_GUIDELINES} ${FINAL_FILE_GUIDELINES}

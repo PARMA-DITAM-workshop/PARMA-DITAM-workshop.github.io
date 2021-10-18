@@ -81,7 +81,7 @@ a:hover {
 
 #navigation {
 	float: left;
-	width: 150px;
+	width: 160px;
 }
 
 #navigation h2 {
@@ -112,8 +112,8 @@ a:hover {
 
 #wrapper {
 	float: right;
-	width: 864px;
-	margin-left: 10px;
+	width: 850px;
+	margin-left: 14px;
 }
 
 #main-content {
