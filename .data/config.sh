@@ -14,12 +14,12 @@ HIPEAC_LINK='https://www.hipeac.net/2022/budapest/#/'
 PARMA=13
 DITAM=11
 
-SUBMISSION_LINK='https://easychair.org/conferences/?conf=parmaditam2022'
+SUBMISSION_LINK='https://easychair.org/conferences/?conf=parmaditam22'
 
 ## comment items that should not appear
 INDEX_ITEM_CFP='<li>Call For Papers <b>TBA</b></li>'
-#INDEX_ITEM_SUBMISSION='<li><a href="'"$SUBMISSION_LINK_DATA"'">Paper Submission</a></li>'
-INDEX_ITEM_SUBMISSION='<li>Paper Submission <b>TBA</b></li>'
+INDEX_ITEM_SUBMISSION='<li><a href="'"$SUBMISSION_LINK"'">Paper Submission</a></li>'
+#INDEX_ITEM_SUBMISSION='<li>Paper Submission <b>TBA</b></li>'
 #INDEX_ITEM_PROGRAM='<li><a href="./program.html">Workshop Program</a></li>'
 #INDEX_ITEM_PROGRAM_PDF='<li><a href="./Program.pdf">Final Program PDF</a></li>'
 
