@@ -61,7 +61,7 @@ make_real_date()
 subm_date_html=$(make_items \
   "${SUBMISSION_DATES}" \
   '' ' - 11:59 PM (UTC): Paper Submission Deadline' \
-  '<font color="#FF0000"><b>' '- 11:59 PM (UTC): NEW EXTENDED Paper Submission Deadline</b></font>')
+  '<font color="#FF0000"><b>' ' - 11:59 PM (UTC): NEW EXTENDED Paper Submission Deadline</b></font>')
 accp_date_html=$(make_items \
   "${ACCEPTANCE_DATES}" \
   '' ': Acceptance Notification' \
