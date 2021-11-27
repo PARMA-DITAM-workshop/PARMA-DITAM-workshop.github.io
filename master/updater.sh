@@ -28,15 +28,18 @@ make_items()
   # $4: extended prefix
   # $5: extended suffix
   cur=
+  lastd=
   for d in $1; do
     if [[ ! ( -z "$cur" ) ]]; then
       printf '<li><strike>%s</strike></li>' "$cur"
-      cur="$4""$d""$5"
+      cur="$2""$d""$3"
+      lastd="$4""$d""$5"
     else
       cur="$2""$d""$3"
+      lastd="$cur"
     fi
   done
-  printf '<li>%s</li>' "$cur"
+  printf '<li>%s</li>' "$lastd"
 }
 
 make_real_date()
@@ -47,15 +50,18 @@ make_real_date()
   # $4: extended prefix
   # $5: extended suffix
   cur=
+  lastd=
   for d in $1; do
     if [[ ! ( -z "$cur" ) ]]; then
       printf '<strike>%s</strike> ' "$cur"
-      cur="$4""$d""$5"
+      cur="$2""$d""$3"
+      lastd="$4""$d""$5"
     else
       cur="$2""$d""$3"
+      lastd="$cur"
     fi
   done
-  printf '%s' "$cur"
+  printf '%s' "$lastd"
 }
 
 subm_date_html=$(make_items \
@@ -65,11 +71,11 @@ subm_date_html=$(make_items \
 accp_date_html=$(make_items \
   "${ACCEPTANCE_DATES}" \
   '' ': Acceptance Notification' \
-  '' '<b>(EXTENDED deadline)</b> Acceptance Notification')
+  '<b>' ': (EXTENDED deadline)</b> Acceptance Notification')
 cdry_date_html=$(make_items \
   "${CAMERA_DATES}" \
   '' ': <a href= "./Submission_Guidelines.html">Camera ready</a> version of accepted papers for workshop proceedings' \
-  '' ': <b>(EXTENDED deadline)</b> <a href= "./Submission_Guidelines.html">Camera ready</a> version of accepted papers for workshop proceedings')
+  '<b>' ': (EXTENDED deadline)</b> <a href= "./Submission_Guidelines.html">Camera ready</a> version of accepted papers for workshop proceedings')
 THE_SUBMISSION_CALENDAR="$subm_date_html$accp_date_html$cdry_date_html"
 
 THE_REAL_CAMERA_DATE=$(make_real_date \
