@@ -7,7 +7,7 @@ DAY=22
 MONTH=06
 YEAR=2022
 
-ROOM=TBA
+ROOM="Lehar I"
 LOCATION="Budapest, HU"
 HIPEAC_LINK='https://www.hipeac.net/2022/budapest/#/'
 
