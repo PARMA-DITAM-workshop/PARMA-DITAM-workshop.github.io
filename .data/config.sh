@@ -14,7 +14,7 @@ HIPEAC_LINK='https://www.hipeac.net/2023/toulouse/#/'
 PARMA=14
 DITAM=12
 
-#SUBMISSION_LINK='https://easychair.org/conferences/?conf=parmaditam22'
+SUBMISSION_LINK='https://easychair.org/conferences/?conf=parmaditam2023'
 
 
 ##
@@ -25,7 +25,7 @@ DITAM=12
 #INDEX_ITEM_CFP='<li><a href="./parma_ditam_2022_CfP.pdf">Call For Papers</a></li>'
 #INDEX_ITEM_CFP='<li>Call For Papers <b>TBA</b></li>'
 
-#INDEX_ITEM_SUBMISSION='<li><a href="'"$SUBMISSION_LINK"'">Paper Submission</a></li>'
+INDEX_ITEM_SUBMISSION='<li><a href="'"$SUBMISSION_LINK"'">Paper Submission</a></li>'
 #INDEX_ITEM_SUBMISSION='<li>Paper Submission <b>TBA</b></li>'
 
 #INDEX_ITEM_PROGRAM='<li><a href="./program.html">Workshop Program</a></li>'
