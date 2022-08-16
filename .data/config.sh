@@ -2,12 +2,12 @@
 ## WORKSHOP INFORMATION
 ##
 
-WEEKDAY=Wednesday
-DAY=18
+WEEKDAY=Tuesday
+DAY=17
 MONTH=01
 YEAR=2023
 
-ROOM="TBD"
+ROOM="Mermoz"
 LOCATION="Toulouse, FR"
 HIPEAC_LINK='https://www.hipeac.net/2023/toulouse/#/'
 
