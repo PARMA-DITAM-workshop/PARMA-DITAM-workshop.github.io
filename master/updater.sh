@@ -74,8 +74,8 @@ accp_date_html=$(make_items \
   '<b>' ': (EXTENDED deadline)</b> Acceptance Notification')
 cdry_date_html=$(make_items \
   "${CAMERA_DATES}" \
-  '' ': Camera ready version of accepted papers for workshop proceedings' \
-  '<b>' ': (EXTENDED deadline)</b> Camera ready version of accepted papers for workshop proceedings')
+  '' ': <a href= "./Submission_Guidelines.html">Camera ready</a> version of accepted papers for workshop proceedings' \
+  '<b>' ': (EXTENDED deadline)</b> <a href= "./Submission_Guidelines.html">Camera ready</a> version of accepted papers for workshop proceedings')
 THE_SUBMISSION_CALENDAR="$subm_date_html$accp_date_html$cdry_date_html"
 
 THE_REAL_CAMERA_DATE=$(make_real_date \
