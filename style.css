@@ -145,6 +145,11 @@ a:hover {
 	list-style-type:none;
 }
 
+#bullet-list li {
+  margin-left: 16pt;
+	list-style-type:circle;
+}
+
 #main-content p {
 	margin-top: 0.5em;
 }
