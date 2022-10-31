@@ -12,13 +12,8 @@ body {
 }
 
 a {
-	text-decoration: none;
-	color: #99AECD;
-}
-
-a:hover {
 	text-decoration: underline;
-	color: #4F5D7F;
+	color: blue;
 }
 
 #wrap {
@@ -61,22 +56,6 @@ a:hover {
 #content {
 	margin-top: 10px;
 	width: 1024px;
-}
-
-#content h3 a {
-	text-decoration: underline;
-	color: blue;
-}
-
-#content h3 a:hover {
-}
-
-#content p a {
-	text-decoration: underline;
-	color: blue;
-}
-
-#content p a:hover {
 }
 
 #navigation {
@@ -128,7 +107,7 @@ a:hover {
 	padding: 15px 0 7px 0;
 }
 
-#main-content h2 a {
+#main-content h2 {
 	text-decoration: none;
 }
 
@@ -189,12 +168,14 @@ a:hover {
 }
 
 .tpc ul li a {
+	color: #99AECD;
 	text-decoration: none;
 	font-weight: 600;
 }
 
 .tpc ul li a:hover {
-
+ 	text-decoration: underline;
+  color: #4F5D7F;
 }
 
 #footer {
