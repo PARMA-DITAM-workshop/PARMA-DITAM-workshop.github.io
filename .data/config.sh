@@ -28,7 +28,8 @@ INDEX_ITEM_CFP='<li><a href="./parma_ditam_2023_CfP.pdf">Call For Papers</a></li
 INDEX_ITEM_SUBMISSION='<li><a href="'"$SUBMISSION_LINK"'">Paper Submission</a></li>'
 #INDEX_ITEM_SUBMISSION='<li>Paper Submission <b>TBA</b></li>'
 
-INDEX_ITEM_PROGRAM_PDF='<li><a href="./parma_ditam_2023_program_v4.pdf">Workshop Program</a></li>'
+INDEX_ITEM_PROGRAM='<li><a href="./program.html">Workshop Program</a></li>'
+INDEX_ITEM_PROGRAM_PDF='<li><a href="./parma_ditam_2023_program_v4.pdf">Workshop Program (PDF)</a></li>'
 
 
 ##
