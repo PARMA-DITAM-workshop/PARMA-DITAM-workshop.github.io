@@ -7,7 +7,7 @@ DAY=17
 MONTH=01
 YEAR=2023
 
-ROOM="Mermoz"
+ROOM="Durat (morning), Mermoz (afternoon)"
 LOCATION="Toulouse, FR"
 HIPEAC_LINK='https://www.hipeac.net/2023/toulouse/#/'
 
@@ -28,8 +28,7 @@ INDEX_ITEM_CFP='<li><a href="./parma_ditam_2023_CfP.pdf">Call For Papers</a></li
 INDEX_ITEM_SUBMISSION='<li><a href="'"$SUBMISSION_LINK"'">Paper Submission</a></li>'
 #INDEX_ITEM_SUBMISSION='<li>Paper Submission <b>TBA</b></li>'
 
-#INDEX_ITEM_PROGRAM='<li><a href="./program.html">Workshop Program</a></li>'
-#INDEX_ITEM_PROGRAM_PDF='<li><a href="./parma_ditam_2022_program.pdf">Workshop Program</a></li>'
+INDEX_ITEM_PROGRAM_PDF='<li><a href="./parma_ditam_2023_program_v4.pdf">Workshop Program</a></li>'
 
 
 ##

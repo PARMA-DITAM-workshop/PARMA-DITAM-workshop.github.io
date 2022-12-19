@@ -8,10 +8,6 @@ TEMPLATE_FILE_INDEX=`pwd`/_index.html
 TMP_FILE_INDEX=`pwd`/index_tmp.html
 FINAL_FILE_INDEX=`pwd`/../index.html
 
-TEMPLATE_FILE_PROGRAM=`pwd`/_program.html
-TMP_FILE_PROGRAM=`pwd`/program_tmp.html
-FINAL_FILE_PROGRAM=`pwd`/../program.html
-
 TEMPLATE_FILE_GUIDELINES=`pwd`/_submission.html
 TMP_FILE_GUIDELINES=`pwd`/submission_tmp.html
 FINAL_FILE_GUIDELINES=`pwd`/../Submission_Guidelines.html
@@ -85,10 +81,9 @@ THE_REAL_CAMERA_DATE=$(make_real_date \
 
 # start processing
 cat "$TEMPLATE_FILE_GLOB_HEAD" "$TEMPLATE_FILE_INDEX" "$TEMPLATE_FILE_GLOB_FOOT" > "$TMP_FILE_INDEX"
-cat "$TEMPLATE_FILE_GLOB_HEAD" "${TEMPLATE_FILE_PROGRAM}" "$TEMPLATE_FILE_GLOB_FOOT" > "${TMP_FILE_PROGRAM}"
 cat "$TEMPLATE_FILE_GLOB_HEAD" "${TEMPLATE_FILE_GUIDELINES}" "$TEMPLATE_FILE_GLOB_FOOT" > "${TMP_FILE_GUIDELINES}"
 
-for WIP_FILE in "${TMP_FILE_PROGRAM}" "${TMP_FILE_INDEX}" "${TMP_FILE_GUIDELINES}"
+for WIP_FILE in "${TMP_FILE_INDEX}" "${TMP_FILE_GUIDELINES}"
 do
 	# workshop data
 	sed -i '' "s%__WEEKDAY__%${WEEKDAY}%g" ${WIP_FILE}
@@ -113,5 +108,4 @@ do
 done
 
 mv ${TMP_FILE_INDEX} ${FINAL_FILE_INDEX}
-mv ${TMP_FILE_PROGRAM} ${FINAL_FILE_PROGRAM}
 mv ${TMP_FILE_GUIDELINES} ${FINAL_FILE_GUIDELINES}
