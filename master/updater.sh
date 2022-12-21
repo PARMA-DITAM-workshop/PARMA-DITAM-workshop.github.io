@@ -66,16 +66,16 @@ make_real_date()
 
 subm_date_html=$(make_items \
   "${SUBMISSION_DATES}" \
-  '' ' - 11:59 PM (UTC): Paper Submission Deadline' \
-  '<font color="#FF0000"><b>' ' - 11:59 PM (UTC): NEW EXTENDED Paper Submission Deadline</b></font>')
+  '' ' - 23:59 (UTC): Paper Submission Deadline' \
+  '<font color="#FF0000"><b>' ' - 23:59 (UTC): NEW EXTENDED Paper Submission Deadline</b></font>')
 accp_date_html=$(make_items \
   "${ACCEPTANCE_DATES}" \
   '' ': Acceptance Notification' \
   '<b>' ': (EXTENDED deadline)</b> Acceptance Notification')
 cdry_date_html=$(make_items \
   "${CAMERA_DATES}" \
-  '' ': <a href= "./Submission_Guidelines.html">Camera ready</a> version of accepted papers for workshop proceedings' \
-  '<b>' ': (EXTENDED deadline)</b> <a href= "./Submission_Guidelines.html">Camera ready</a> version of accepted papers for workshop proceedings')
+  '' ' - 23:59 (UTC): <a href= "./Submission_Guidelines.html">Camera ready</a> version of accepted papers for workshop proceedings' \
+  '<b>' ' - 23:59 (UTC): (EXTENDED deadline)</b> <a href= "./Submission_Guidelines.html">Camera ready</a> version of accepted papers for workshop proceedings')
 THE_SUBMISSION_CALENDAR="$subm_date_html$accp_date_html$cdry_date_html"
 
 THE_REAL_CAMERA_DATE=$(make_real_date \
