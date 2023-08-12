@@ -3,9 +3,9 @@
 ##
 
 WEEKDAY=Tuesday
-DAY=17
+DAY=18
 MONTH=01
-YEAR=2023
+YEAR=2024
 
 ROOM="Servanty"
 LOCATION="Toulouse, FR"
