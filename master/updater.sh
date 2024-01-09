@@ -91,25 +91,25 @@ cat "$TEMPLATE_FILE_GLOB_HEAD" "${TEMPLATE_FILE_GUIDELINES}" "$TEMPLATE_FILE_GLO
 for WIP_FILE in "${TMP_FILE_PROGRAM}" "${TMP_FILE_INDEX}" "${TMP_FILE_GUIDELINES}"
 do
 	# workshop data
-	sed -i '' "s%__WEEKDAY__%${WEEKDAY}%g" ${WIP_FILE}
-	sed -i '' "s%__DAY__%${DAY}%g" ${WIP_FILE}
-	sed -i '' "s%__MONTH__%${MONTH}%g" ${WIP_FILE}
-	sed -i '' "s%__YEAR__%${YEAR}%g" ${WIP_FILE}
-	sed -i '' "s%__ROOM__%${ROOM}%g" ${WIP_FILE}
-	sed -i '' "s%__LOCATION__%${LOCATION}%g" ${WIP_FILE}
-	sed -i '' "s%__HIPEAC_LINK__%${HIPEAC_LINK}%g" ${WIP_FILE}
-	sed -i '' "s|__SUBMISSION_LINK__|${SUBMISSION_LINK}|" ${WIP_FILE}
+	sed -i "s%__WEEKDAY__%${WEEKDAY}%g" ${WIP_FILE}
+	sed -i "s%__DAY__%${DAY}%g" ${WIP_FILE}
+	sed -i "s%__MONTH__%${MONTH}%g" ${WIP_FILE}
+	sed -i "s%__YEAR__%${YEAR}%g" ${WIP_FILE}
+	sed -i "s%__ROOM__%${ROOM}%g" ${WIP_FILE}
+	sed -i "s%__LOCATION__%${LOCATION}%g" ${WIP_FILE}
+	sed -i "s%__HIPEAC_LINK__%${HIPEAC_LINK}%g" ${WIP_FILE}
+	sed -i "s|__SUBMISSION_LINK__|${SUBMISSION_LINK}|" ${WIP_FILE}
 	# index
-	sed -i '' "s%__INDEX_ITEM_CFP__%${INDEX_ITEM_CFP}%g" ${WIP_FILE}
-	sed -i '' "s%__INDEX_ITEM_SUBMISSION__%${INDEX_ITEM_SUBMISSION}%g" ${WIP_FILE}
-	sed -i '' "s%__INDEX_ITEM_PROGRAM__%${INDEX_ITEM_PROGRAM}%g" ${WIP_FILE}
-	sed -i '' "s%__INDEX_ITEM_PROGRAM_PDF__%${INDEX_ITEM_PROGRAM_PDF}%g" ${WIP_FILE}
+	sed -i "s%__INDEX_ITEM_CFP__%${INDEX_ITEM_CFP}%g" ${WIP_FILE}
+	sed -i "s%__INDEX_ITEM_SUBMISSION__%${INDEX_ITEM_SUBMISSION}%g" ${WIP_FILE}
+	sed -i "s%__INDEX_ITEM_PROGRAM__%${INDEX_ITEM_PROGRAM}%g" ${WIP_FILE}
+	sed -i "s%__INDEX_ITEM_PROGRAM_PDF__%${INDEX_ITEM_PROGRAM_PDF}%g" ${WIP_FILE}
 	# edition numbers
-	sed -i '' "s%__PARMA__%${PARMA}%g" ${WIP_FILE}
-	sed -i '' "s%__DITAM__%${DITAM}%g" ${WIP_FILE}
+	sed -i "s%__PARMA__%${PARMA}%g" ${WIP_FILE}
+	sed -i "s%__DITAM__%${DITAM}%g" ${WIP_FILE}
   # submission calendar et al
-	sed -i '' "s%__THE_SUBMISSION_CALENDAR__%${THE_SUBMISSION_CALENDAR}%g" ${WIP_FILE}
-	sed -i '' "s%__THE_REAL_CAMERA_DATE__%${THE_REAL_CAMERA_DATE}%g" ${WIP_FILE}
+	sed -i "s%__THE_SUBMISSION_CALENDAR__%${THE_SUBMISSION_CALENDAR}%g" ${WIP_FILE}
+	sed -i "s%__THE_REAL_CAMERA_DATE__%${THE_REAL_CAMERA_DATE}%g" ${WIP_FILE}
 done
 
 mv ${TMP_FILE_INDEX} ${FINAL_FILE_INDEX}
