@@ -14,7 +14,7 @@ HIPEAC_LINK='https://www.hipeac.net/2025/barcelona/#/'
 PARMA=16
 DITAM=14
 
-SUBMISSION_LINK='TBA' # 'https://easychair.org/conferences/?conf=parmaditam2024'
+SUBMISSION_LINK='https://easychair.org/conferences/?conf=parmaditam2025'
 
 
 ##
@@ -25,8 +25,8 @@ SUBMISSION_LINK='TBA' # 'https://easychair.org/conferences/?conf=parmaditam2024'
 # INDEX_ITEM_CFP='<li><a href="./parma_ditam_2024_CfP.pdf">Call For Papers</a></li>'
 INDEX_ITEM_CFP='<li>Call For Papers <b>TBA</b></li>'
 
-# INDEX_ITEM_SUBMISSION='<li><a href="'"$SUBMISSION_LINK"'">Paper Submission</a></li>'
-INDEX_ITEM_SUBMISSION='<li>Paper Submission <b>TBA</b></li>'
+INDEX_ITEM_SUBMISSION='<li><a href="'"$SUBMISSION_LINK"'">Paper Submission</a></li>'
+# INDEX_ITEM_SUBMISSION='<li>Paper Submission <b>TBA</b></li>'
 
 # INDEX_ITEM_PROGRAM='<li><a href="./program.html">Workshop Program</a></li>'
 # INDEX_ITEM_PROGRAM_PDF='<li><a href="./parma_ditam_2024_program.pdf">Workshop Program (PDF)</a></li>'
