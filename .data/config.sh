@@ -22,8 +22,8 @@ SUBMISSION_LINK='https://easychair.org/conferences/?conf=parmaditam2025'
 ## comment out items that should not appear
 ##
 
-# INDEX_ITEM_CFP='<li><a href="./parma_ditam_2024_CfP.pdf">Call For Papers</a></li>'
-INDEX_ITEM_CFP='<li>Call For Papers <b>TBA</b></li>'
+INDEX_ITEM_CFP='<li><a href="./parma_ditam_2025_CfP.pdf">Call For Papers</a></li>'
+# INDEX_ITEM_CFP='<li>Call For Papers <b>TBA</b></li>'
 
 INDEX_ITEM_SUBMISSION='<li><a href="'"$SUBMISSION_LINK"'">Paper Submission</a></li>'
 # INDEX_ITEM_SUBMISSION='<li>Paper Submission <b>TBA</b></li>'
