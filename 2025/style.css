@@ -1,0 +1,187 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #333;
+	font-family: Tahoma, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	line-height: 20px;
+	color: #222;
+}
+
+a {
+	text-decoration: underline;
+	color: blue;
+}
+
+#wrap {
+	margin: 20px auto 10px auto;
+	width: 1024px;
+	background: #fff;
+	padding: 10px;
+	border: 5px solid #000;
+}
+
+#header {
+	background: #807464 no-repeat;
+	height: 120px;
+}
+
+#header h1 {
+	font-size: 50px;
+	letter-spacing: -5px;
+	padding: 17px 0 0 10px;
+	margin: 0;
+}
+
+#header h1 a {
+	color: #D1DDEF;
+	text-decoration: none;
+	font-weight: 600;
+}
+
+#header h1 a:hover {
+	color: #fff;
+}
+
+#header h2 {
+	padding-top: 17px;
+	padding-left: 10px;
+	padding-bottom: 17px;
+	line-height: 1.2;
+}
+
+#content {
+	margin-top: 10px;
+	width: 1024px;
+}
+
+#navigation {
+	float: left;
+	width: 160px;
+}
+
+#navigation h2 {
+	margin: 10px 0 0 0;
+	padding-left: 2px;
+	height: 24px;
+	line-height: 24px;
+	color: #7988AF;
+	font-size: 15px;
+}
+
+#navigation ul {
+	padding: 0 0 15px 25px;
+	list-style-type: square;
+	color: #99AECD;
+	margin-left: -1em;
+}
+
+#navigation ul li a {
+	text-decoration: none;
+	font-weight: 600;
+	color: #0099FF;
+}
+
+#navigation ul li a:hover {
+	color: #3399FF;
+}
+
+#wrapper {
+	float: right;
+	width: 850px;
+	margin-left: 14px;
+}
+
+#main-content {
+	float: left;
+	text-align: justify;
+	width: 600px;
+}
+
+#main-content h2 {
+	font-size: 18px;
+	font-weight: 100;
+	padding: 15px 0 7px 0;
+}
+
+#main-content h2 {
+	text-decoration: none;
+}
+
+#main-content h3 {
+	margin: 0;
+}
+
+#main-content h4 {
+	color: #668FCD;
+	margin: 0;
+}
+
+#main-content li {
+	list-style-type:none;
+}
+
+#bullet-list li {
+  margin-left: 16pt;
+	list-style-type:circle;
+}
+
+#main-content p {
+	margin-top: 0.5em;
+}
+
+.center {
+	text-align: center;
+}
+
+#programcommittee {
+	font-size: 11px;
+	line-height: 15px;
+	color: #000000;
+}
+
+#programcommittee li {
+  padding-bottom: 5px;
+}
+
+.tpc {
+	float: right;
+	width: 230px;
+}
+
+.tpc h2 {
+	margin: 10px 0 0 0;
+	padding-left: 10px;
+	height: 24px;
+	line-height: 24px;
+	color: #7988AF;
+	font-size: 14px;
+}
+
+.tpc ul {
+	padding: 10px -5px 15px 30px;
+	list-style-type: none;
+	color: #99AECD;
+}
+
+.tpc ul li a {
+	color: #99AECD;
+	text-decoration: none;
+	font-weight: 600;
+}
+
+.tpc ul li a:hover {
+ 	text-decoration: underline;
+  color: #4F5D7F;
+}
+
+#footer {
+text-align: center;
+font-size: 9px;
+color: #aaa;
+}
+#footer a { color: #aaa; }
+#footer a:hover { color: #111; }
