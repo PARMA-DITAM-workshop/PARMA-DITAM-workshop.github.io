@@ -40,6 +40,7 @@ a {
 	color: #D1DDEF;
 	text-decoration: none;
 	font-weight: 600;
+	font-size: 50px;
 }
 
 #header h1 a:hover {
@@ -51,6 +52,7 @@ a {
 	padding-left: 10px;
 	padding-bottom: 17px;
 	line-height: 1.2;
+	font-size: 11px;
 }
 
 #content {
