@@ -36,7 +36,7 @@ a {
 	margin: 0;
 }
 
-#header h1 a {
+.header-title a {
 	color: #D1DDEF;
 	text-decoration: none;
 	font-weight: 600;
@@ -47,7 +47,7 @@ a {
 	color: #fff;
 }
 
-#header h2 {
+.header-subtitle {
 	padding-top: 17px;
 	padding-left: 10px;
 	padding-bottom: 17px;
