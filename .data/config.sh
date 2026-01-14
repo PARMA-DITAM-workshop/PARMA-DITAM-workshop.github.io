@@ -29,7 +29,7 @@ INDEX_ITEM_SUBMISSION='<li><a href="'"$SUBMISSION_LINK"'">Paper Submission</a></
 # INDEX_ITEM_SUBMISSION='<li>Paper Submission <b>TBA</b></li>'
 
 INDEX_ITEM_PROGRAM='<li><a href="./program.html">Workshop Program (Tentative)</a></li>'
-INDEX_ITEM_PROGRAM_PDF='<li>Workshop Program (PDF) <b>TBA</b></li>'
+INDEX_ITEM_PROGRAM_PDF='<li><a href="./parma_ditam_2026_program.pdf">Workshop Program (PDF)</a></li>'
 # INDEX_ITEM_PROGRAM='<li><a href="./program.html">Workshop Program</a></li>'
 # INDEX_ITEM_PROGRAM_PDF='<li><a href="./parma_ditam_2025_program.pdf">Workshop Program (PDF)</a></li>'
 
