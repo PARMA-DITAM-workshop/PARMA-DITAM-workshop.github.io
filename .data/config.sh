@@ -14,7 +14,7 @@ HIPEAC_LINK='https://www.hipeac.net/2027/glasgow/#/'
 PARMA=18
 DITAM=16
 
-SUBMISSION_LINK='https://easychair.org/conferences?conf=parmaditam2026'
+SUBMISSION_LINK='https://easychair.org/conferences/?conf=parmaditam2027'
 
 
 ##
@@ -22,11 +22,11 @@ SUBMISSION_LINK='https://easychair.org/conferences?conf=parmaditam2026'
 ## comment out items that should not appear
 ##
 
-# INDEX_ITEM_CFP='<li><a href="./parma_ditam_2026_CfP.pdf">Call For Papers</a></li>'
-INDEX_ITEM_CFP='<li>Call For Papers <b>TBA</b></li>'
+INDEX_ITEM_CFP='<li><a href="./parma_ditam_2027_CfP.pdf">Call For Papers</a></li>'
+# INDEX_ITEM_CFP='<li>Call For Papers <b>TBA</b></li>'
 
-# INDEX_ITEM_SUBMISSION='<li><a href="'"$SUBMISSION_LINK"'">Paper Submission</a></li>'
-INDEX_ITEM_SUBMISSION='<li>Paper Submission <b>TBA</b></li>'
+INDEX_ITEM_SUBMISSION='<li><a href="'"$SUBMISSION_LINK"'">Paper Submission</a></li>'
+# INDEX_ITEM_SUBMISSION='<li>Paper Submission <b>TBA</b></li>'
 
 INDEX_ITEM_PROGRAM='<li>Workshop Program  <b>TBA</b></li>'
 INDEX_ITEM_PROGRAM_PDF='<li>Workshop Program (PDF) <b>TBA</b></li>'
@@ -40,6 +40,6 @@ INDEX_ITEM_PROGRAM_PDF='<li>Workshop Program (PDF) <b>TBA</b></li>'
 ## formatted as extended deadlines. QUOTE EVERYTHING OR IT WON'T WORK
 ##
 
-SUBMISSION_DATES="TBA" # 03/12/2023"
-ACCEPTANCE_DATES="TBA" # 22/12/2023"
-CAMERA_DATES="TBA" # "31/12/2023 08/01/2024"
+SUBMISSION_DATES="16/11/2026" # 03/12/2023"
+ACCEPTANCE_DATES="14/12/2026" # 22/12/2023"
+CAMERA_DATES="07/01/2027" # "31/12/2023 08/01/2024"
